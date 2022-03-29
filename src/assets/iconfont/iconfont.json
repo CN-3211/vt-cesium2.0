@@ -1,0 +1,79 @@
+{
+  "id": "2952396",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1336088",
+      "name": "漫游",
+      "font_class": "manyou",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1968821",
+      "name": "测量",
+      "font_class": "celiang",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "4766883",
+      "name": "camera",
+      "font_class": "camera",
+      "unicode": "e7d7",
+      "unicode_decimal": 59351
+    },
+    {
+      "icon_id": "5650853",
+      "name": "标绘",
+      "font_class": "biaohui",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "5806778",
+      "name": "3 Pointer",
+      "font_class": "Pointer",
+      "unicode": "e8a0",
+      "unicode_decimal": 59552
+    },
+    {
+      "icon_id": "11229898",
+      "name": "polyline",
+      "font_class": "polyline",
+      "unicode": "e80c",
+      "unicode_decimal": 59404
+    },
+    {
+      "icon_id": "13106274",
+      "name": "其他",
+      "font_class": "qita",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "17581886",
+      "name": "挖洞",
+      "font_class": "wadong",
+      "unicode": "ec7d",
+      "unicode_decimal": 60541
+    },
+    {
+      "icon_id": "22380850",
+      "name": "选面面积",
+      "font_class": "xuanmianmianji",
+      "unicode": "edb1",
+      "unicode_decimal": 60849
+    },
+    {
+      "icon_id": "23376813",
+      "name": "剖面信息",
+      "font_class": "poumianxinxi",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    }
+  ]
+}
