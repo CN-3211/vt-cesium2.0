@@ -1,8 +1,8 @@
 <!--
  * @Date: 2021-06-02 17:39:05
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-29 14:58:06
- * @FilePath: /cesium-web-vue/src/views/index.vue
+ * @LastEditTime: 2022-03-30 13:16:56
+ * @FilePath: /vt-cesium2.0/src/views/index.vue
 -->
 <template>
   <div class="index" id="mapContainer">
@@ -11,8 +11,8 @@
     <Control3DTiles v-if="selectedTileset" :selectedTileset="selectedTileset"></Control3DTiles>
     <MapInfo v-if="isMapReady"></MapInfo>
 
-   <el-button class="btn btn-1" @click="flyTo('city')">城市模型</el-button>
-   <el-button class="btn btn-2" type="primary" @click="flyTo('model')">地质模型</el-button>
+   <el-button class="hbtn hbtn-1" @click="flyTo('city')">城市模型</el-button>
+   <el-button class="hbtn hbtn-2" @click="flyTo('model')">地质模型</el-button>
   </div>
 </template>
 
@@ -58,7 +58,7 @@ const flyTo = (target:string) => {
 <style lang="scss">
 .index {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
   .chart_panel {
   width: calc(100% - 220px);
@@ -90,22 +90,13 @@ const flyTo = (target:string) => {
     height: 100%;
   }
 
-  .btn {
+  .hbtn {
     position: absolute;
     top: 10px;
     right: 120px;
   }
-  .btn-2 {
+  .hbtn-2 {
     right: 10px;
-  }
-  .btn2 {
-    top: 45px;
-  }
-  .btn3 {
-    top: 80px;
-  }
-  .btn4 {
-    top: 115px;
   }
 
   .controlsGroup {

@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-10-20 19:33:49
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-29 18:42:32
+ * @LastEditTime: 2022-03-30 13:09:00
  * @FilePath: /vt-cesium2.0/src/components/toolbarGroup/toolbarGroup.vue
 -->
 <template>
@@ -121,6 +121,7 @@ export default defineComponent({
     .tool-item {
       width: 50px;
       height: 50px;
+      text-align: center;
       border-bottom: 1px solid #ddd;
     }
     .tool-item:last-child {

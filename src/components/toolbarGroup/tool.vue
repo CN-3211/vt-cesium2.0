@@ -1,3 +1,9 @@
+<!--
+ * @Date: 2022-03-29 17:21:47
+ * @LastEditors: huangzh873
+ * @LastEditTime: 2022-03-30 13:09:42
+ * @FilePath: /vt-cesium2.0/src/components/toolbarGroup/tool.vue
+-->
 <template>
   <div class="tool">
     <div class="iconfont" :class="props.isActive ? `iconfont-active ${props.icon}` : props.icon"></div>
@@ -24,6 +30,7 @@
   .tool {
     width: 100%;
     height: 85px;
+    text-align: center;
     padding-top: 5px;
     .iconfont {
       width: 40px;
