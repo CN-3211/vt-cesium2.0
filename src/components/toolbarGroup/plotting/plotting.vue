@@ -10,8 +10,7 @@
 
 <script lang="ts" setup>
   import { ref, inject } from "vue";
-  import type { CesiumRef } from '@/@types/index';
-  import { CESIUM_REF_KEY } from '@/libs/cesium-vue';
+  import { CesiumRef, CESIUM_REF_KEY } from '@/libs/cesium/cesium-vue';
 
   import { ElMessage } from 'element-plus'
   import Tool from '../tool.vue'

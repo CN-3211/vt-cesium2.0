@@ -1,33 +1,25 @@
 <!--
  * @Date: 2021-06-02 17:39:05
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-30 13:16:56
+ * @LastEditTime: 2022-03-30 22:16:33
  * @FilePath: /vt-cesium2.0/src/views/index.vue
 -->
 <template>
   <div class="index" id="mapContainer">
+    <BdToolbar v-if="isMapReady" ref="toolbar" />
     <MapViewer @loaded="onLoaded" ref="mapViewer"></MapViewer>
-    <ToolbarGroup  v-if="isMapReady" class="toolbar-group" @onEdit3Dtiles="onEdit3Dtiles"></ToolbarGroup>
-    <Control3DTiles v-if="selectedTileset" :selectedTileset="selectedTileset"></Control3DTiles>
-    <MapInfo v-if="isMapReady"></MapInfo>
-
-   <el-button class="hbtn hbtn-1" @click="flyTo('city')">城市模型</el-button>
-   <el-button class="hbtn hbtn-2" @click="flyTo('model')">地质模型</el-button>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, inject, onMounted } from 'vue';
-
-
-import type { CesiumRef } from '@/@types/index';
-import { CESIUM_REF_KEY } from '@/libs/cesium-vue';
-import MapViewer from '@/components/viewer/index.vue'
-import MapInfo from '@/components/mapInfo/mapInfo.vue'
-import Control3DTiles from '@/components/ToolInfoControl/control3DTiles.vue';
-
-import ToolbarGroup from '@/components/toolbarGroup/toolbarGroup.vue';
+import { ref, inject } from 'vue';
 import type { Cesium3DTileset, Viewer } from 'cesium';
+
+import { CesiumRef, CESIUM_REF_KEY } from '@/libs/cesium/cesium-vue';
+
+import MapViewer from '@/components/viewer/index.vue'
+import BdToolbar from '@/components/bd-toolbar/index.vue';
+
 import type { Ref } from 'vue'
 
 const cesiumRef = inject<CesiumRef>(CESIUM_REF_KEY);

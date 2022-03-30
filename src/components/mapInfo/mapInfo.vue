@@ -1,8 +1,8 @@
 <!--
  * @Date: 2021-10-28 22:04:56
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-28 20:55:54
- * @FilePath: /cesium-web-vue/src/components/mapInfo/mapInfo.vue
+ * @LastEditTime: 2022-03-30 22:15:43
+ * @FilePath: /vt-cesium2.0/src/components/mapInfo/mapInfo.vue
 -->
 <template>
   <div class="mapInfo">
@@ -19,8 +19,7 @@
 
 <script lang="ts" setup>
   import { inject, reactive } from "vue";
-  import type { CesiumRef } from '@/@types/index';
-  import { CESIUM_REF_KEY } from '@/libs/cesium-vue';
+  import { CesiumRef, CESIUM_REF_KEY } from '@/libs/cesium/cesium-vue'
 
   import { pickMousePosition, computeMapScale } from './mapInfo';
   // const infoHandler = new Cesium.ScreenSpaceEventHandler();

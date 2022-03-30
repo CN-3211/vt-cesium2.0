@@ -1,8 +1,8 @@
 <!--
  * @Date: 2021-10-26 21:56:32
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-28 21:04:44
- * @FilePath: /cesium-web-vue/src/components/toolbarGroup/others/others.vue
+ * @LastEditTime: 2022-03-30 22:22:40
+ * @FilePath: /vt-cesium2.0/src/components/toolbarGroup/others/others.vue
 -->
 <template>
   <div class="others">
@@ -17,9 +17,8 @@
 <script lang="ts" setup>
   import { Cesium3DTileset, ScreenSpaceEventHandler } from "cesium";
   import {inject, ref, Ref, watch, getCurrentInstance } from "vue";
-  import type { CesiumRef } from '@/@types/index';
-  import { CESIUM_REF_KEY } from '@/libs/cesium-vue';
-
+  import { CesiumRef, CESIUM_REF_KEY } from '@/libs/cesium/cesium-vue';
+  
   import interaction from '@/utils/vue-utils/keyboardInteraction/index';
   import Tool from '../tool.vue'
   import { selectTileset } from '@/utils/vue-utils/handle3DTiles/index';

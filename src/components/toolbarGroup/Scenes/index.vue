@@ -1,8 +1,8 @@
 <!--
  * @Date: 2021-11-04 21:58:18
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-28 20:56:45
- * @FilePath: /cesium-web-vue/src/components/toolbarGroup/Scenes/index.vue
+ * @LastEditTime: 2022-03-30 22:16:16
+ * @FilePath: /vt-cesium2.0/src/components/toolbarGroup/Scenes/index.vue
 -->
 <template>
   <div class="scene">
@@ -21,8 +21,7 @@
 
 <script lang="ts" setup>
   import * as Cesium from "cesium";
-  import type { CesiumRef } from '@/@types/index';
-  import { CESIUM_REF_KEY } from '@/libs/cesium-vue';
+  import { CesiumRef, CESIUM_REF_KEY } from '@/libs/cesium/cesium-vue';
 
   import { inject, ref, watch } from "vue";
   import Tool from '../tool.vue'

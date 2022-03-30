@@ -1,7 +1,7 @@
 <!--
  * @Date: 2021-10-26 21:56:32
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-29 21:25:53
+ * @LastEditTime: 2022-03-30 22:16:23
  * @FilePath: /vt-cesium2.0/src/components/ToolInfoControl/control3DTiles.vue
 -->
 <template>
@@ -79,8 +79,8 @@ import {
   Cesium3DTileset,
 } from "cesium";
 
-import type { CesiumRef } from '@/@types/index';
-import { CESIUM_REF_KEY } from '@/libs/cesium-vue';
+import { CesiumRef, CESIUM_REF_KEY } from '@/libs/cesium/cesium-vue';
+
 
 import transform from "@/utils/vue-utils/transform/transform";
 import { changeCar3ToLnglat } from '@/utils/c-utils';

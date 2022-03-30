@@ -1,8 +1,8 @@
 <!--
  * @Date: 2021-11-04 21:58:18
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-28 21:43:53
- * @FilePath: /cesium-web-vue/src/components/toolbarGroup/analysis/analysis.vue
+ * @LastEditTime: 2022-03-30 22:15:50
+ * @FilePath: /vt-cesium2.0/src/components/toolbarGroup/analysis/analysis.vue
 -->
 <template>
   <div class="analysis" id="analysis">
@@ -21,8 +21,7 @@
 
 <script lang="ts" setup>
   import { inject, ref, watch } from "vue";
-  import type { CesiumRef } from '@/@types/index';
-  import { CESIUM_REF_KEY } from '@/libs/cesium-vue';
+  import { CesiumRef, CESIUM_REF_KEY } from '@/libs/cesium/cesium-vue'
 
   import Tool from '../tool.vue'
   import { sectionAnalysis, } from './sectionAnalysis';

@@ -1,9 +1,25 @@
 /*
  * @Date: 2021-11-04 21:29:17
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-29 18:29:34
+ * @LastEditTime: 2022-03-30 14:48:08
  * @FilePath: /vt-cesium2.0/src/utils/index.ts
  */
+
+const CHARS =
+  '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('')
+
+const uuid = function (): string {
+  const uuid:any[] = []
+  uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-'
+  let r
+  for (let i = 0; i < 36; i++) {
+    if (!uuid[i]) {
+      r = 0 | (Math.random() * 16)
+      uuid[i] = CHARS[i === 19 ? (r & 0x3) | 0x8 : r]
+    }
+  }
+  return uuid.join('')
+}
 
 /**
  * @description: 节流函数，防止短时间内函数多次调用
@@ -55,4 +71,4 @@ function deepWatcher(obj: any, callback: any) {
   })
 }
 
-export { throttle, deepWatcher }
+export { uuid, throttle, deepWatcher }

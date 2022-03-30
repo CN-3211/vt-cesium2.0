@@ -1,8 +1,8 @@
 <!--
  * @Date: 2022-03-28 10:24:46
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-29 12:27:32
- * @FilePath: /cesium-web-vue/src/components/viewer/index.vue
+ * @LastEditTime: 2022-03-30 22:23:36
+ * @FilePath: /vt-cesium2.0/src/components/viewer/index.vue
 -->
 <template>
   <HViewer :infoBox="false" @loaded="onViewerLoaded"></HViewer>
@@ -12,11 +12,11 @@
 import * as Cesium from 'cesium';
 import { ref, inject, onMounted, getCurrentInstance } from 'vue';
 
-import type { CesiumRef } from '@/@types/index';
-import { CESIUM_REF_KEY } from '@/libs/cesium-vue';
+import { CesiumRef, CESIUM_REF_KEY } from '@/libs/cesium/cesium-vue'
 
 import transform from "@/utils/vue-utils/transform/transform";
 import HViewer from '@/components/viewer/hViewer.vue'
+import Jt from '@/libs/cesium/cesium-jt'
 
 import { LOADED_EVENT } from './constant';
 
@@ -25,7 +25,6 @@ if (!cesiumRef) {
   throw new Error('No cesium reference exist.')
 }
 
-let tmp_viewer:Cesium.Viewer;
 let tileset:undefined | Cesium.Cesium3DTileset;
 let tileset2:undefined | Cesium.Cesium3DTileset;
 
@@ -42,7 +41,7 @@ onMounted(() => {
 
 const onViewerLoaded = (viewer: Cesium.Viewer) => {
   
-  tmp_viewer = viewer;
+  viewer.jt = new Jt(viewer)
   // 修改ready状态并绑定provide值
   isMapReady.value = true;
   cesiumRef.viewer = viewer;

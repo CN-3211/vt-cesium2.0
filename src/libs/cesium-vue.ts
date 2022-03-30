@@ -1,8 +1,8 @@
 /*
  * @Date: 2022-03-28 11:15:48
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-28 16:10:23
- * @FilePath: /cesium-web-vue/src/libs/cesium-vue.ts
+ * @LastEditTime: 2022-03-30 22:10:31
+ * @FilePath: /vt-cesium2.0/src/libs/cesium-vue.ts
  */
 import { App } from 'vue';
 import { CesiumRef } from '@/@types/index';
