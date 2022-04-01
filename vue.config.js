@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-03-29 16:52:36
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-29 17:15:34
+ * @LastEditTime: 2022-04-01 13:19:10
  * @FilePath: /vt-cesium2.0/vue.config.js
  */
 const { defineConfig } = require('@vue/cli-service')
@@ -13,6 +13,24 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
   publicPath: "./",
+  chainWebpack: (config) => {
+    config.module
+      .rule('svg')
+      .exclude.add(function () {
+        return 'src/components/base-icon/svgs'
+      })
+      .end()
+
+    config.module
+      .rule('jtsvgicon')
+      .test(/\.svg$/)
+      .include.add(function () {
+        return 'src/components/base-icon/svgs'
+      })
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+  },
   configureWebpack: {
     plugins: [
       // Copy Cesium Assets, Widgets, and Workers to a static directory

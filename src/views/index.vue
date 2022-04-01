@@ -1,50 +1,44 @@
 <!--
  * @Date: 2021-06-02 17:39:05
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-30 22:16:33
+ * @LastEditTime: 2022-03-31 20:16:06
  * @FilePath: /vt-cesium2.0/src/views/index.vue
 -->
 <template>
   <div class="index" id="mapContainer">
-    <BdToolbar v-if="isMapReady" ref="toolbar" />
+    <JtToolbar v-if="isMapReady" ref="toolbar" />
     <MapViewer @loaded="onLoaded" ref="mapViewer"></MapViewer>
+    <JtLocationbar v-if="isMapReady && locationBarShow" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, inject } from 'vue';
-import type { Cesium3DTileset, Viewer } from 'cesium';
+import { ref, inject, computed } from 'vue';
+import { useStore } from '@/store';
+import { LocationBarGetterEnum } from '@/store/modules/jt-cesium-vue/modules/locationbar/getter-enum'
 
 import { CesiumRef, CESIUM_REF_KEY } from '@/libs/cesium/cesium-vue';
 
 import MapViewer from '@/components/viewer/index.vue'
-import BdToolbar from '@/components/bd-toolbar/index.vue';
+import JtToolbar from '@/components/jt-toolbar/index.vue';
+import JtLocationbar from '@/components/jt-locationbar/index.vue';
 
-import type { Ref } from 'vue'
+import type { Viewer } from 'cesium';
 
 const cesiumRef = inject<CesiumRef>(CESIUM_REF_KEY);
 if (!cesiumRef) {
   throw new Error('No cesium reference exist.')
 }
-// let tileset:undefined | Cesium.Cesium3DTileset;
-// let tileset2:undefined | Cesium.Cesium3DTileset;
 // 判断Viewer组件是否准备完毕
 const isMapReady = ref(false);
-
-/** selectedTileset赋值开始 */
-let selectedTileset: Ref<Cesium3DTileset | undefined> = ref(undefined);
-const onEdit3Dtiles = (tileset: Cesium3DTileset | undefined) => {
-  selectedTileset.value = tileset;
-}
-/** selectedTileset赋值结束 */
-
-const mapViewer = ref();
 const onLoaded = (viewer: Viewer) => {
   isMapReady.value = true
 }
-const flyTo = (target:string) => {
-  mapViewer?.value.flyTo(target)
-}
+
+const store = useStore();
+const locationBarShow = computed((): boolean => {
+  return store.getters[`jtCesiumVue/locationbar/${LocationBarGetterEnum.ALL_SHOW}`]
+})
 
 </script>
 <style lang="scss">

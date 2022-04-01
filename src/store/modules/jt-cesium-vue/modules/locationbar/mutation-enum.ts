@@ -1,4 +1,4 @@
-export enum LocationBarActionEnum {
+export enum LocationBarMutationEnum {
   RESET_STATE = 'RESET_STATE',
   SET_SHOW_CAMERA_LOCATION = 'SET_SHOW_CAMERA_LOCATION',
   SET_SHOW_MOUSE_LOCATION = 'SET_SHOW_MOUSE_LOCATION',
