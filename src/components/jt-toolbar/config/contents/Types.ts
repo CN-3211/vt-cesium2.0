@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-03-28 09:56:52
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-30 20:08:23
+ * @LastEditTime: 2022-04-06 16:51:39
  * @FilePath: /vt-cesium2.0/src/components/jt-toolbar/config/contents/Types.ts
  */
 import type { Viewer } from 'cesium';
@@ -19,14 +19,14 @@ export type OnMountedOption = {
 export type OnMounted = (option: OnMountedOption) => void
 
 export type Content = {
-  name: string | ((t: T) => string)
+  name: string
   groups: Array<Group>
   invisible?: boolean
   disable?: boolean
 }
 
 export type Group = {
-  name: string | ((t: T) => string)
+  name: string
   items: Array<Item>
   invisible?: boolean
   disable?: boolean
@@ -42,7 +42,7 @@ export type ClickHandler = (option: ClickHandlerOption) => void | any
 
 export type Item = {
   // string for name, function for i18n convert
-  name: string | ((t: T) => string)
+  name: string
   icon: string
   invisible?: boolean
   disable?: boolean
@@ -54,8 +54,6 @@ export type Item = {
   dropdownOnClick?: boolean
   dropdown?: Dropdown
 }
-
-export type T = (key: string | number, defaultMsg?: string) => string
 
 export type ClickHandlerOption = {
   viewer?: Viewer

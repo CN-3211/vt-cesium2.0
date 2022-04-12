@@ -1,36 +1,35 @@
 /*
  * @Date: 2022-03-30 16:34:56
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-31 17:01:15
+ * @LastEditTime: 2022-04-02 10:47:18
  * @FilePath: /vt-cesium2.0/src/store/modules/jt-cesium-vue/modules/locationbar/actions.ts
  */
 import { ActionTree } from 'vuex'
 import { RootState } from '@/store'
 
 import type { State } from './state'
-import { LocationBarMutationEnum } from './mutation-enum'
-import { LocationBarActionEnum } from './action-types'
+import { LocationbarHandlerEnum } from './enum-constant'
 
 export const actions: ActionTree<State, RootState> = {
-  async [LocationBarActionEnum.RESET_STATE]({ commit }) {
-    commit(LocationBarMutationEnum.RESET_STATE)
+  async [LocationbarHandlerEnum.RESET_STATE]({ commit }) {
+    commit(LocationbarHandlerEnum.RESET_STATE)
   },
 
-  async [LocationBarActionEnum.SET_SHOW_CAMERA_LOCATION](
+  async [LocationbarHandlerEnum.SET_SHOW_CAMERA_LOCATION](
     { commit },
     payload: boolean
   ) {
-    commit(LocationBarMutationEnum.SET_SHOW_CAMERA_LOCATION, payload)
+    commit(LocationbarHandlerEnum.SET_SHOW_CAMERA_LOCATION, payload)
   },
 
-  async [LocationBarActionEnum.SET_SHOW_MOUSE_LOCATION](
+  async [LocationbarHandlerEnum.SET_SHOW_MOUSE_LOCATION](
     { commit },
     payload: boolean
   ) {
-    commit(LocationBarMutationEnum.SET_SHOW_MOUSE_LOCATION, payload)
+    commit(LocationbarHandlerEnum.SET_SHOW_MOUSE_LOCATION, payload)
   },
 
-  async [LocationBarActionEnum.SET_SHOW_FPS]({ commit }, payload: boolean) {
-    commit(LocationBarMutationEnum.SET_SHOW_FPS, payload)
+  async [LocationbarHandlerEnum.SET_SHOW_FPS]({ commit }, payload: boolean) {
+    commit(LocationbarHandlerEnum.SET_SHOW_FPS, payload)
   },
 }

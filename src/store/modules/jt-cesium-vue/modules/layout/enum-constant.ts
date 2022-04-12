@@ -1,4 +1,4 @@
-export enum LayoutActionTypes {
+export enum LayoutHandlerEnum {
   RESET_STATE = 'RESET_STATE',
   SET_SHOW_BROWSER_PANEL = 'SET_SHOW_BROWSER_PANEL',
   SET_SHOW_TOOLBAR = 'SET_SHOW_TOOLBAR',

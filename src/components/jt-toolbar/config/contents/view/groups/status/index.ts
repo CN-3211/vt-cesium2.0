@@ -1,11 +1,11 @@
 /*
  * @Date: 2022-03-30 15:49:30
  * @LastEditors: huangzh873
- * @LastEditTime: 2022-03-31 19:49:16
+ * @LastEditTime: 2022-04-02 11:10:06
  * @FilePath: /vt-cesium2.0/src/components/jt-toolbar/config/contents/view/groups/status/index.ts
  */
 import { Group, ClickHandlerOption, ActiveOption } from '../../../Types'
-import { LocationBarActionEnum } from '@/store/modules/jt-cesium-vue/modules/locationbar/action-types'
+import { LocationbarHandlerEnum } from '@/store/modules/jt-cesium-vue/modules/locationbar/enum-constant'
 
 const view: Group = {
   name: '状态栏',
@@ -16,7 +16,7 @@ const view: Group = {
       clickHandler: (option: ClickHandlerOption): void => {
         const payload: boolean = !option.store.state.jtCesiumVue.locationbar.showCameraLocation
         option.store.dispatch(
-          `jtCesiumVue/locationbar/${LocationBarActionEnum.SET_SHOW_CAMERA_LOCATION}`,
+          `jtCesiumVue/locationbar/${LocationbarHandlerEnum.SET_SHOW_CAMERA_LOCATION}`,
           payload
         )
       },
@@ -36,7 +36,7 @@ const view: Group = {
         const payload: boolean =
           !option.store.state.jtCesiumVue.locationbar.showMouseLocation
         option.store?.dispatch(
-          `jtCesiumVue/locationbar/${LocationBarActionEnum.SET_SHOW_MOUSE_LOCATION}`,
+          `jtCesiumVue/locationbar/${LocationbarHandlerEnum.SET_SHOW_MOUSE_LOCATION}`,
           payload
         )
       },
@@ -51,7 +51,7 @@ const view: Group = {
         const payload: boolean =
           !option.store.state.jtCesiumVue.locationbar.showFPS
         option.store.dispatch(
-          `jtCesiumVue/locationbar/${LocationBarActionEnum.SET_SHOW_FPS}`,
+          `jtCesiumVue/locationbar/${LocationbarHandlerEnum.SET_SHOW_FPS}`,
           payload
         )
       },

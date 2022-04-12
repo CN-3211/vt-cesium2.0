@@ -2,31 +2,31 @@ import { MutationTree } from 'vuex'
 import { defaultState } from './state'
 import type { State } from './state'
 import type { OverlayDynamicView } from './state'
-import { LayoutMutationTypes } from './mutation-types'
+import { LayoutHandlerEnum } from './enum-constant'
 import { uuid } from '@/utils'
 
 export const mutations: MutationTree<State> = {
-  [LayoutMutationTypes.RESET_STATE](state: State) {
+  [LayoutHandlerEnum.RESET_STATE](state: State) {
     Object.assign(state, defaultState())
   },
 
-  [LayoutMutationTypes.SET_SHOW_BROWSER_PANEL](state: State, payload: boolean) {
+  [LayoutHandlerEnum.SET_SHOW_BROWSER_PANEL](state: State, payload: boolean) {
     state.showBrowserPanel = payload
   },
 
-  [LayoutMutationTypes.SET_SHOW_TOOLBAR](state: State, payload: boolean) {
+  [LayoutHandlerEnum.SET_SHOW_TOOLBAR](state: State, payload: boolean) {
     state.showToolbar = payload
   },
 
-  [LayoutMutationTypes.SET_SHOW_SETTING_BUTTON](state: State, payload: boolean) {
+  [LayoutHandlerEnum.SET_SHOW_SETTING_BUTTON](state: State, payload: boolean) {
     state.showSettingButton = payload
   },
 
-  [LayoutMutationTypes.SET_TOOLBAR_HEIGHT](state: State, payload: number) {
+  [LayoutHandlerEnum.SET_TOOLBAR_HEIGHT](state: State, payload: number) {
     state.toolbarHeight = payload
   },
 
-  [LayoutMutationTypes.ADD_UNIQUE_NAME_OVERLAY_DYNAMIC_VIEW_BY_NAME](
+  [LayoutHandlerEnum.ADD_UNIQUE_NAME_OVERLAY_DYNAMIC_VIEW_BY_NAME](
     state: State,
     payload: string
   ) {
@@ -42,7 +42,7 @@ export const mutations: MutationTree<State> = {
     })
   },
 
-  [LayoutMutationTypes.REMOVE_OVERLAY_DYNAMIC_VIEW_BY_NAME](
+  [LayoutHandlerEnum.REMOVE_OVERLAY_DYNAMIC_VIEW_BY_NAME](
     state: State,
     payload: string
   ) {
